@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backgroundd"
+    tools:context=".escolherComponents">
+
+    <TextView
+        android:id="@+id/title_suaPreferencia"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginTop="50dp"
+        android:text="Escolha seu dispositivo e marca"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+
+        android:id="@+id/lista_spinner_component"
+        style="@style/escolhe_itens"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/title_suaPreferencia"
+        app:layout_constraintStart_toStartOf="@id/title_suaPreferencia"
+        app:layout_constraintEnd_toEndOf="@id/title_suaPreferencia"
+         />
+
+    <Button
+        android:id="@+id/editButtonescolhido"
+        style="@style/Edit_round_Button_2"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:text="Sair"
+        android:background="@drawable/round_button_2"
+        app:layout_constraintTop_toBottomOf="@id/lista_spinner_component"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

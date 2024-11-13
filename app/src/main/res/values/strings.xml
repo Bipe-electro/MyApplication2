@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="entrar">Entrar</string>
+    <string name="text_cadastro">Crie um conta aqui</string>
+    <string name="title_cadastro">Cadastre-se</string>
+    <string name="title_suaPreferencia">Escolha marca e componente</string>
+    <string name="lista_spinner_components">items</string>
+
+    <string-array name="lista_de_componentes">
+        <item>SELECIONE ITENS</item>
+        <item>CPU AMD</item>
+        <item>CPU INTEL</item>
+        <item>GPU AMD</item>
+        <item>GPU INTEL</item>
+        <item>GPU NVIDIA</item>
+    </string-array>
+</resources>
