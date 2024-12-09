@@ -21,6 +21,11 @@ import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.Firebase;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class FormCadastro extends AppCompatActivity {
 
@@ -75,6 +80,9 @@ public class FormCadastro extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
+
+                    SalvarDadosUsuario();
+
                     Snackbar snackbar = Snackbar.make(view,mensagens[1],Snackbar.LENGTH_SHORT);
                     snackbar.setBackgroundTint(Color.WHITE);
                     snackbar.setTextColor(Color.BLACK);
@@ -83,6 +91,22 @@ public class FormCadastro extends AppCompatActivity {
 
             }
         });
+    }
+
+    private void SalvarDadosUsuario(){
+        String nome = edit_nome.getText().toString();
+
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+
+        Map<String,Object> usuarios = new HashMap<>();
+        usuarios.put("nome", nome);
+
+        usuarioID = FirebaseAuth.getInstance().getCurrentUser().getUid();
+
+        DocumentReference documentReference = db.collection(collectionPath: "Usuarios").document(usuarioID);
+
+
+
     }
     private void IniciarComponentes(){
         edit_nome = findViewById(R.id.edit_nome);

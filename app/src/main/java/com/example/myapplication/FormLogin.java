@@ -16,7 +16,7 @@ import com.google.firebase.Firebase;
 public class FormLogin extends AppCompatActivity {
 
     private TextView text_tela_cadastro;
-    private androidx.appcompat.widget.AppCompatButton bt_entrar;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +25,7 @@ public class FormLogin extends AppCompatActivity {
 
 
         IniciarComponentes();
-        IniciarComponents();
+
 
         text_tela_cadastro.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -36,13 +36,7 @@ public class FormLogin extends AppCompatActivity {
             }
         });
 
-        bt_entrar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(FormLogin.this,escolherComponents.class);
-                startActivity(intent);
-            }
-        });
+
 
     }
 
@@ -50,9 +44,7 @@ public class FormLogin extends AppCompatActivity {
         text_tela_cadastro = findViewById(R.id.text_tela_cadastro);
     }
 
-    private void IniciarComponents(){
-        bt_entrar = findViewById(R.id.bt_entrar);
-    }
+
 
 
 }
